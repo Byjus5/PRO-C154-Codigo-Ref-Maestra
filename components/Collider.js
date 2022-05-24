@@ -1,29 +1,29 @@
-// Registering component in Collider.js
+// Registrar componente en Collider.js
 AFRAME.registerComponent("flying-birds", {
   init: function () {
     for (var i = 1; i <= 20; i++) {
       //id
       var id = `hurdle${i}`;
 
-      //position variables
+      //variables de posición
       var posX = Math.floor(Math.random() * 3000 + -1000);
       var posY = Math.floor(Math.random() * 2 + -1);
       var posZ = Math.floor(Math.random() * 3000 + -1000);
 
       var position = { x: posX, y: posY, z: posZ };
 
-      //call the function
+      //llamar a la función
       this.flyingBirds(id, position);
     }
   },
   flyingBirds: (id, position) => {
-    //Get the terrain element
+    //Obtener el elemento de terreno
     var terrainEl = document.querySelector("#terrain");
 
-    //creating the bird model entity
+    //Crear la entidad del modelo de ave
     var birdEl = document.createElement("a-entity");
 
-    //Setting multiple attributes
+    //Establecer múltiples atributos
     birdEl.setAttribute("id", id);
 
     birdEl.setAttribute("position", position);
@@ -31,10 +31,10 @@ AFRAME.registerComponent("flying-birds", {
 
     birdEl.setAttribute("gltf-model", "./assets/models/flying_bird/scene.gltf");
 
-    //animated models
+    //modelos animados
     birdEl.setAttribute("animation-mixer", {});
 
-    //append the bird entity as the child of the terrain entity
+    //adjuntar la entidad del ave como hija de la entidad de terreno
     terrainEl.appendChild(birdEl);
   }
 });
