@@ -1,4 +1,4 @@
-// Registering component in Target.js
+// Registrar componente en Target.js
 
 AFRAME.registerComponent("target-ring", {
   init: function () {
@@ -6,14 +6,14 @@ AFRAME.registerComponent("target-ring", {
       //id
       var id = `ring${i}`;
 
-      //position variables   
+      //variables de posición   
       var posX =(Math.random() * 3000 + (-1000));      
       var posY = (Math.random() * 2 + (-1));
       var posZ = (Math.random() * 3000 + -1000);
 
       var position = { x: posX, y: posY, z: posZ };
 
-      //call the function
+      //llamar a la función
       this.createRings(id, position);
     }
   } ,
